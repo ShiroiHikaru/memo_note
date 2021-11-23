@@ -1,0 +1,144 @@
+*DB 명령어 - 앞쪽에 있는 철자 일 수록 더 높은 권한
+
+1. DCL 
+  -사용자 권한 설정 및 횟수
+  - grand, revoke
+
+2. DDL☆
+  - 데이터 객체 제어
+  - create, alter, drop
+
+3. DML★
+  - 데이터 조작
+  - insert, update, delete, select
+
+
+  *MariaDB 기본 쿼리
+  1. show : 데이터베이스 & 테이블 목록 확인
+  2. use : 데이터베이스 선택
+
+
+  * create
+  1. 객체 생성
+    - db, table, 사용자, index, ...
+
+  2. 기본 문법
+    -create 객체 객체명 (하위요소)
+  
+  3.DB 생성
+    - create dataase DB명;
+
+javascript, php 에서는 '' 따옴표나 "" 둘다 쓰지만
+데이터베이스는 무조건 ''로 문자를 처리한다.
+
+
+
+*테이블 생성
+1. cteate table 테이블 명(
+  필드명 자료형(길이값) 제약조건,
+  필드명 자료형(길이값) 제약조건,
+  필드명 자료형(길이값) 제약조건,
+  ...
+);
+
+- 예제 -
+2. create table members(
+  idx int auto_increment primary key,
+  u_name varchar(20) not null,
+  u_id varchar(20) not null,
+  pwd varchar(20) not null
+);
+
+*데이터베이스 제약(기본)
+★1. auto_increment : 자동증가, 자동갱신 X, 기본키로 설정
+★2. primary key : 기본키, 해당 행을 구분하기 위한 고유값을 가지는 필드에 설정(띄어쓰기 가능)
+3. foreign key : 참조키, 다른 테이블과 연관된 데이터가 입력된 필드에 지정(띄어쓰기 가능)
+★4. not null : 빈 값 허용 안함
+5. unique : 중복값 허용 안함
+6. check : 정해진 값만 입력 가능
+7. default : 기본값 설정
+
+
+사용자에게 권한을 줄 때 : grant 권한 on DB명.테이블 to '사용자'@'계정';
+
+
+
+* 테이블 구조 확인
+1. describe 또는 desc 테이블명;
+
+
+
+* 자료 검색 : select
+1. 모든 필드 검색 : select * from 테이블명
+2. 일부 필드 검색 : select 필드명, 필드명,...from 테이블명;
+
+
+
+** DB 생성 : front
+create database front
+default character set utf8
+default collate utf8_general_ci;
+
+* DB 선택 : use front;
+
+* 테이블 생성
+
+1. 새로운 테이블 만들기
+  create table 테이블명(
+    필드명 데이터타입(길이) 제약,
+    필드명 데이터타입(길이) 제약,
+    필드명 데이터타입(길이) 제약,
+    필드명 데이터타입(길이) 제약,
+  );
+
+2. 다른 테이블을 이용한 테이블 생성
+  create table 테이블명 as select문;
+
+
+* 테이블 목록 확인
+  show tables;
+
+
+
+* 테이블 구조 확인
+  describe 테이블명
+  desc 테이블명
+
+  create table board2 as select title, content, author from board;
+
+
+* 테이블 수정
+  1. 열 삭제
+  alter table 테이블명 drop 삭제할 열 이름
+  ex) alter table board drop view_count;
+
+  2. 열 추가
+  alter table 테이블이름 add 열 이름 자료형
+  ex) alter table board add view_count varchar(20)
+
+  alter table 테이블이름 add 열 이름 자료형 after 필드명
+  alter table 테이블이름 add 열 이름 자료형 first
+
+  3. 열 데이터 타입 변경
+  alter table 테이블명 modify 열 이름 자료형
+  ex) alter table board modify view_count int default 0;
+
+  4. 필드명 변경
+  alter table 테이블명 change "기존 열 이름" "새로운 열 이름" 자료형
+
+
+* 테이블 이름 변경
+  1. rename table 이전 이름 to 새로운 이름
+  ex) rename table board to notice;
+
+  2. alter table 이전이름 rename 새로운 이름
+  ex) alter table board2 to box;
+
+
+* 테이블 데이터 삭제(DML : delete)
+  1. truncate table 테이블 명
+  ex) truncate table notice;
+
+* 테이블 삭제
+  1. drop table 테이블명
+  ex) drop table box;

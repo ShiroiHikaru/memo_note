@@ -1,0 +1,115 @@
+★ 문자와 숫자 ★
+"text"(문자): string / ''시작해서 ''로 끝내거나, 혹은 ""로 시작해서 ""로 끝낸다 
+""의 경우 ''를 써도 되지만 반드시 통일해줘야한다
+
+12345 : 숫자, 값을 저장할 수 있고 데이터를 variable에 저장할 수 있다.
+
+
+★ variable을 만드는 두가지 옵션 ★
+
+1. const : 값을 업데이트 할 수 없다
+2. let : const과 같은 역활을 하지만 값을 업데이트 할 수 있다. variable을 업데이트 하고 싶다면 이쪽을 사용
+variable을 업데이트 할 때에는 앞에 let 붙이지 않는다.
+
+규칙은 항상 const을 사용하되 가끔 필요한 경우에만 let을 쓰고 var는 절대로 사용하지 말것
+
+var는 오래된 자바스크립트 개념이고 let, const처럼 구분 지을 수가 없다. var는 let과 비슷한 개념
+
+
+
+★ true / false and null / underfined ★
+
+※ "true" 는 문자지만, true 은 문자가 아니다
+
+true와 false는 boolean이라고 불리며 1과0 on/off 처럼 2가지의 옵션 밖에 없다.
+
+null은 비어있음이란 뜻으로 내가 직접 코드 안에서 작성, variable안에 아무것도 없다는걸 확실시 할 경우
+변수에 해당되는 값, 말 그대로 비어 있음.
+
+underfined는 변수에 값을 부여하지 않은 상태
+ex) let hello; console.log(hello); 
+
+파이썬에서는 None, go에서는 Nil이라고 표현한다.
+
+
+★ 하나의 variable에 여러가지 데이터를 넣고 싶은 경우 ★
+
+1. array
+const me = "sexy";
+ex) const day = [1, 2, false, true, null, underfined, "text", me]; << 중괄호 안에 리스트 작성
+    
+    const tobuy = ["potato[0]", "tomato[1]", "pizza[2]"];
+    tobuy[2]
+
+    console.log(tobuy[2]);
+
+    자바스크립트에서는 숫자를 셀때 0부터 센다. 즉 1은 실질적으로 2번째
+
+    아이템을 업데이트 할 수 있는데 이런 경우엔
+    tobuy[2]="water"; << 2번 인덱스의 값을 설정
+    console.log(tobuy);
+ 
+  <자바스크립트 array 식별자>
+  - push : array의 끝에 item을 하나 더 추가하는 것
+    ex) tobuy.push("item");
+
+
+
+★ 의미가 있는 프로퍼티(property)를 저장하려고 하는 경우 ★
+
+1.object
+
+const player = {
+  name: "heeyeon",
+  age: 27,
+}<< 이곳에 player의 object를 작성할 수 있다.
+
+player.name
+console.log(player)
+
+object의 경우도 array처럼 한개의 element를 가져올 수 있고 업데이트도 할 수 있다.
+
+자바스크립트는 위에서 아래로 읽는 습성이 있다.
+
+
+object를 만든 이후에 object 안에 새로운 item(아이템)을 만드는것도 가능하다.
+
+
+★ function은 어떤 코드를 캡슐화 하여 그걸 계속 반복해서 사용할 수 있다. ★
+
+function plus(){
+  console.log(2 + 3);
+}
+
+plus();
+
+
+function안에 미리 data를 넣어두는 것 보다 밖에서 data를 넣을 수 있게 하는것이 더 좋다.
+function의 목적은 여러가지 일을 같은 코드로 처리하기 위함이기 때문이다.
+
+function안에서 data를 받는 방법은 ()안에 무언가를 적는 것, 굳이 a, b가 아닌 모든 명사는 전부 가능
+말 그대로 data를 받으면 대체되는 placeholder(자리표시자)와 같은 개념이다.
+
+function plus(potato, salad){
+  console.log(potato + salad);
+}
+
+plus(5, 10);
+plus(1243423, 2353454);
+plus(1243423, 2353454);
+
+placeholder를 사용할 때에는 반드시 순서를 지켜야 한다. 앞자리 순서는 반드시 앞자리, 뒷자리 순서는 반드시 뒷자리
+
+아무리 많은 argument을 입력해도 문제가 없는 것이 function은 오직 첫번째만 받는다.
+
+예시의 potato의 경우는 function의 body에서만 사용이 가능하고, function의 바디는 {}로 감싸진 부분을 말한다.
+그러므로 potato는 function 밖에서는 접근을 할 수 없다.
+
+const calculator = {
+  add: function(a, b){
+    console.log(a, b);
+  }
+}
+
+calculator.add(5, 1);
+console.log()
