@@ -222,3 +222,13 @@ default collate utf8_general_ci;
   
   2. delete from 테이블명 where 조건
     -delete from board where idx in(1, 3, 5);
+
+============================================================================
+
+* 사용자 생성
+  create user '아이디'@'접속위치' identified by '비밀번호'
+  - create user 'tester1'@'localhost' identified by '1234';
+
+  1. 접속 위치
+  - 내부 : localhost
+  - 외부 : %
