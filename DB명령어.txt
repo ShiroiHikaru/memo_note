@@ -232,3 +232,19 @@ default collate utf8_general_ci;
   1. 접속 위치
   - 내부 : localhost
   - 외부 : %
+  - 특정 IP
+
+
+* 권한 확인
+  show grants from '아이디'@'접속위치';
+  1. usage : 접속권한.
+
+* 사용자 제거
+  drop user '아이디'@'접속위치';
+  - drop user 'tester1'@'localhost';
+
+* grant : 권한 부여
+  grant 권한, 권한 on DB이름.테이블이름 to '아이디'@'접속위치' with 옵션;
+
+  1. tester1 사용자에게 front 라는 DB의 모든 테이블에 select, insert 권한 부여
+    -grant select, insert on front.* to 'tester1'@'localhost';
