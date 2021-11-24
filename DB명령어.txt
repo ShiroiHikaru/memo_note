@@ -206,3 +206,19 @@ default collate utf8_general_ci;
   select 필드명 from 테이블명 order by 기준필드 정렬방식
   - select * from board order by idx desc;
   - select * from board where idx in(1, 3, 5) order by idx desc;
+
+
+* update : 데이터 수정
+  1. update 테이블명 set 필드명 = '수정할 값'
+    - update board set view_count=1;
+  2. update 테이블명 set 필드명 = '수정할 값', 필드명='수정할 값',...
+    -
+  3. update 테이블명 set 필드명 = '수정할 값', 필드명='수정할 값',...where 조건
+    - update board set view_count=2 where idx in(1, 3, 5)
+
+* delete : 데이터 수정
+  1. delete from 테이블명
+    - delete from board;
+  
+  2. delete from 테이블명 where 조건
+    -delete from board where idx in(1, 3, 5);
