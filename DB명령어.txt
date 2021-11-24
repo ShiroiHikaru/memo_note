@@ -91,6 +91,17 @@ default collate utf8_general_ci;
     필드명 데이터타입(길이) 제약,
   );
 
+  ------------------------------------------------------------
+  ex)예시
+  create table board(
+    idx int primary key auto_increment,
+    title varchar(20) not null,
+    content text not null,
+    author varchar(20) not null,
+    wr_date date not null,
+    view_count int default 0
+  );
+
 2. 다른 테이블을 이용한 테이블 생성
   create table 테이블명 as select문;
 
@@ -142,3 +153,23 @@ default collate utf8_general_ci;
 * 테이블 삭제
   1. drop table 테이블명
   ex) drop table box;
+
+
+============================================================================
+
+*insert : 데이터입력
+  1. 전체 필드에 데이터 입력
+    insert into 테이블명 values(값 / '값', '값2'...) - 데이터베이스에서 문자처리는 무조건 '작은따옴표'
+    ex)insert into board values(1, '첫번째 글', 'aaaaaa', '관리자', '2021-11-24', 0)
+
+  2. 일부 필드에 데이터 입력
+    insert into 테이블명(필드명1, 필드명2, ...)values('필드1의; 값1', '필드2의 값',...)
+    
+    필드의 갯수와 필드의 값 갯수가 같아야 한다.
+
+
+
+  *select : 데이터 검색
+  1. 전체 데이터 검색
+  select * from 테이블명
+  -select * from board;
