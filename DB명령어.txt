@@ -171,5 +171,17 @@ default collate utf8_general_ci;
 
   *select : 데이터 검색
   1. 전체 데이터 검색
-  select * from 테이블명
-  -select * from board;
+    select * from 테이블명
+    -select * from board;
+  
+  2. 일부 데이터 검색
+    select 필드명, 필드명, ... from 테이블명
+    - select idx, title from board;
+
+  3. 중복값 제외 검색
+    select distinct 필드명 from 테이블명
+    -select distinct title from board;
+
+  4. 별칭 사용
+    select 필드명 as 별칭, 필드명 as 별칭,... from 테이블명
+    - select title as '제목', content as '내용' from board;
