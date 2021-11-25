@@ -93,13 +93,22 @@ default collate utf8_general_ci;
 
   ------------------------------------------------------------
   ex)예시
-  create table board(
+  create table aaa(
     idx int primary key auto_increment,
     title varchar(20) not null,
     content text not null,
     author varchar(20) not null,
     wr_date date not null,
     view_count int default 0
+  );
+
+  create table list(
+    ordernum int primary key auto_increment,
+    buyer char(5) not null,
+    orderdate date not null,
+    price varchar(8) not null,
+    city char(2) not null,
+    deadline date not null
   );
 
 2. 다른 테이블을 이용한 테이블 생성
