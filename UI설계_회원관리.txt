@@ -24,7 +24,7 @@ method : post
 아이디 | input | text | user_id | user_id | user_id | 필수입력, 4~12글자
 아이디 중복확인 | button | button | O | O | btn | 팝업창 출력 
 비밀번호 | input | password | pwd | pwd | pwd | 필수입력, 4~12글자
-비밀번호 확인 | input | password | repw | repw | repw | 비번과 동일
+비밀번호 확인 | input | repwd | repw | repw | repw | 비번과 동일
 생년월일 | input | text | birth | birth | birth | O
 우편번호 | input | text | zipcode | zipcode | zipcode | O
 주소검색 | button | button | O | O | btn | 팝업창 출력
@@ -35,5 +35,33 @@ method : post
 이메일 도메인 선택| select | em_sel | em_sel | em_sel | 항목 선택시 도메인 필드에 값 출력
 전화번호 | input | text | phone | phone | phone | O
 약관동의 | input | checkbox | agree | agree | agree | 숫자만
-취소 | button | button | O | O | bth | O 
+이전으로 | button | button | O | O | bth | O 
 가입하기 | button | submit | O | O | btn | O
+
+
+==========================================================================
+
+*DB 설계
+
+----------------------------------------------------------------------
+
+DB명 : front
+
+create database front
+default character set utf8
+default collate utf8_general_ci;
+
+==========================================================================
+* table 설계 : members
+----------------------------------------------------------------------
+항목 | 필드명 | 자료형(길이값) | 제약 
+-------------------------------------------------------------------
+이름 | input | text | user_name | user_name | user_name | 필수입력
+아이디 | input | text | user_id | user_id | user_id | 필수입력, 4~12글자
+비밀번호 | input | password | pwd | pwd | pwd | 필수입력, 4~12글자
+생년월일 | input | text | birth | birth | birth | O
+우편번호 | input | text | zipcode | zipcode | zipcode | O
+기본주소 | input | text | add1 | add1 | add1 | O
+상세주소 | input | text | add2 | add2 | add2 | O
+이메일 | input | text | em_id | em_id | em_id | O 
+전화번호 | input | text | phone | phone | phone | O
