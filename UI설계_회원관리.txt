@@ -20,8 +20,8 @@ method : post
 -------------------------------------------------------------------
 항목 | 요소 | type | name | id | class | 제약(규칙), 기능 
 -------------------------------------------------------------------
-이름 | input | text | user_name | name_code | name_list | 필수입력
-아이디 | input | text | user_id | id_code | id_list | PK | 필수입력, 4~12글자
+이름 | input | text | user_name | user_name | user_name | 필수입력
+아이디 | input | text | user_id | user_id | user_id | 필수입력, 4~12글자
 아이디 중복확인 | button | button | O | O | btn | 팝업창 출력 
 비밀번호 | input | password | pwd | pwd | pwd | 필수입력, 4~12글자
 비밀번호 확인 | input | password | repw | repw | repw | 비번과 동일
