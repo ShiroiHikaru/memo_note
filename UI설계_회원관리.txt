@@ -18,17 +18,22 @@
 action : insert.php
 method : post
 -------------------------------------------------------------------
-항목 | 요소 | type | name | id | class | 제약(규칙) 
+항목 | 요소 | type | name | id | class | 제약(규칙), 기능 
 -------------------------------------------------------------------
-이름 | string | varchar(30) | user_name | name_code | name_list | PK | 
-아이디 | string | varchar(10) | user_id | id_code | id_list | PK |
-아이디 중복확인 | string | varchar(10) | user_reid | reid_code | reid_list | PK |
-비밀번호 | string | varchar(12) | user_pw | pw_code | pw_list | PK |
-비밀번호 확인 | string | varchar(12) | user_repw | repw_code | repw_list | PK |
-생년월일 | date | date | birth | birthday | birth_list | PK |
-주소 | string | text | address | add_code | add_list | PK |
-이메일 | string | varchar(100) | email | em_code | em_list | PK |
-전화번호 | number | int | phone | ph_code | ph_list | PK |
-약관동의 | string | char(1) | agree | YN_code | YN_list | PK |
-취소
-가입하기 | string | char(1) | agree | YN_code | YN_list | PK |
+이름 | input | text | user_name | name_code | name_list | 필수입력
+아이디 | input | text | user_id | id_code | id_list | PK | 필수입력, 4~12글자
+아이디 중복확인 | button | button | O | O | btn | 팝업창 출력 
+비밀번호 | input | password | pwd | pwd | pwd | 필수입력, 4~12글자
+비밀번호 확인 | input | password | repw | repw | repw | 비번과 동일
+생년월일 | input | text | birth | birth | birth | O
+우편번호 | input | text | zipcode | zipcode | zipcode | O
+주소검색 | button | button | O | O | btn | 팝업창 출력
+기본주소 | input | text | add1 | add1 | add1 | O
+상세주소 | input | text | add2 | add2 | add2 | O
+이메일 아이디 | input | text | em_id | em_id | em_id | O 
+이메일 도메인 | input | text | em_dm | em_dm | em_dm | O
+이메일 도메인 선택| select | em_sel | em_sel | em_sel | 항목 선택시 도메인 필드에 값 출력
+전화번호 | input | text | phone | phone | phone | O
+약관동의 | input | checkbox | agree | agree | agree | 숫자만
+취소 | button | button | O | O | bth | O 
+가입하기 | button | submit | O | O | btn | O
