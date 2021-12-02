@@ -7,7 +7,7 @@
 -
 
 * 페이지 구성 : website / members
-- 회원가입 + 처리 페이지 : join.php
-- 정보확인(수정) + 처리 페이지 : 
-- 회원탈퇴 처리 페이지
+- 회원가입 + 처리 페이지 : join.php / insert.php(처리페이지)
+- 정보확인(수정) + 처리 페이지 : edit.php / edit_ok.php
+- 회원탈퇴 처리 페이지 : delete.php
 - 
