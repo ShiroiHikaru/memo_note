@@ -56,12 +56,13 @@ default collate utf8_general_ci;
 ----------------------------------------------------------------------
 항목 | 필드명 | 자료형(길이값) | 제약 
 -------------------------------------------------------------------
-이름 | input | text | user_name | user_name | user_name | 필수입력
-아이디 | input | text | user_id | user_id | user_id | 필수입력, 4~12글자
-비밀번호 | input | password | pwd | pwd | pwd | 필수입력, 4~12글자
-생년월일 | input | text | birth | birth | birth | O
-우편번호 | input | text | zipcode | zipcode | zipcode | O
-기본주소 | input | text | add1 | add1 | add1 | O
-상세주소 | input | text | add2 | add2 | add2 | O
-이메일 | input | text | em_id | em_id | em_id | O 
-전화번호 | input | text | phone | phone | phone | O
+인덱스 | idx | int | AI, PK
+이름 | u_name | varchar(20) | not null
+아이디 | u_id | varchar(20) | not null
+비밀번호 | pwd | varchar(20) | not null
+생년월일 | birth | date | O
+우편번호 | zipcode | char(5) | zipcode | O
+기본주소 | add1 | varchar(100) | O
+상세주소 | add2 | varchar(100) | O
+이메일 | email | varchar(50) | O 
+전화번호 | phone | varchar(15) | O
