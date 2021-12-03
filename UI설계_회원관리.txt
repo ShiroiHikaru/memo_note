@@ -66,3 +66,4 @@ default collate utf8_general_ci;
 상세주소 | add2 | varchar(100) | O
 이메일 | email | varchar(50) | O 
 전화번호 | phone | varchar(15) | O
+가입일 | reg_date | date | O
