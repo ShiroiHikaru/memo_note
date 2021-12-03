@@ -93,13 +93,18 @@ default collate utf8_general_ci;
 
   ------------------------------------------------------------
   ex)예시
-  create table aaa(
+  create table members(
     idx int primary key auto_increment,
-    title varchar(20) not null,
-    content text not null,
-    author varchar(20) not null,
-    wr_date date not null,
-    view_count int default 0
+    u_name varchar(20) not null,
+    u_id varchar(20) not null,
+    pwd varchar(20) not null,
+    birth date,
+    zipcode char(5),
+    add1 varchar(100),
+    add2 varchar(100),
+    email varchar(50),
+    phone varchar(12),
+    reg_date date
   );
 
   create table list(
