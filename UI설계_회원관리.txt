@@ -6,7 +6,9 @@
 - 회원관리 : website / members
 - 인클루드 : website / inc
 - 로그인 : website / login
-- 관리자 : admin
+- 관리자 : website / admin
+- 관리자 > 회원관리 : website / admin / members
+
 ==================================================================================
 * 페이지 구성 : website / members
 - 회원가입 + 처리 페이지 : join.php / insert.php(처리페이지)
@@ -24,6 +26,13 @@
 - dbcon.php
 ==================================================================================
 
+* 페이지 구성 - website / admin / members
+(- 회원가입 / 처리 페이지 : join.php / insert.php)
+- 정보확인(수정) + 처리 페이지 : edit.php / edit_ok.php
+- 회원탈퇴 처리 페이지 : delete.php
+(- 아이디 중복확인 : search_id.php / result.php)
+(- 주소검색 : search_addr.php / result_addr.php)
+- 회원 목록 : list.php
 
 -------------------------------------------------------------------
 폼 요소 name : join_form
