@@ -99,7 +99,7 @@ default collate utf8_general_ci;
     u_id varchar(20) not null,
     pwd varchar(20) not null,
     birth date,
-    postalcode char(5),
+    postalCode char(5),
     addr1 varchar(100),
     addr2 varchar(100),
     email varchar(50),
